@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/thebarcart/static/css/main.abd64e84.css",
+    "main.js": "/thebarcart/static/js/main.ff4546e9.js",
+    "static/js/787.ed353714.chunk.js": "/thebarcart/static/js/787.ed353714.chunk.js",
+    "index.html": "/thebarcart/index.html",
+    "main.abd64e84.css.map": "/thebarcart/static/css/main.abd64e84.css.map",
+    "main.ff4546e9.js.map": "/thebarcart/static/js/main.ff4546e9.js.map",
+    "787.ed353714.chunk.js.map": "/thebarcart/static/js/787.ed353714.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.ff4546e9.js"
+  ]
+}
