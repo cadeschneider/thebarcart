@@ -23,7 +23,7 @@ export function NavBar() {
                     <NavLink to="/" className="navbar--text">Home</NavLink>
                 </div>
                 <div className="link--container" ref={dropdownRef}>
-                    <NavLink to="/finddrinks" className="navbar--text" onMouseOver={() => setMenuDropDownOpen(true)}>
+                    <NavLink to="/finddrink" className="navbar--text" onMouseOver={() => setMenuDropDownOpen(true)}>
                         Find Drinks
                     </NavLink>
                     {isMenuDropDownOpen && <Menu />}

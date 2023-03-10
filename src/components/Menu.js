@@ -20,7 +20,7 @@ function Menu() {
 
     return(
 
-            <div className="dropdown--menu">
+            <div className="dropdown-menu">
                 {datalist}
             </div>
     )
