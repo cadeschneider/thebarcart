@@ -4,8 +4,7 @@ import Item from '../components/Item'
 function Categories() {
 
     const [list, setList] = useState([]);
-
-    const [link, setLink] = useState({name: "strCategory", link: "list.php?c=list"})
+    const [link, setLink] = useState({name: "strCategory", link: "list.php?c=list", showdrink: false})
 
     console.log(list)
 
@@ -23,13 +22,24 @@ function Categories() {
         return <Item item={item[link.name]} handleClick={() => {handleClick(item[link.name])}} />
     })
 
+    console.log(datalist.length)
+
     function handleClick(item) {
-        console.log(item)
-        setLink(prevLink => ({...prevLink,
-            name: "strDrink",
-            link: `filter.php?c=${item}`
-        }))
-    }
+        
+        if (link.showdrink === false) {
+            setLink(prevLink => ({...prevLink,
+                name: "strDrink",
+                link: `filter.php?c=${item}`,
+                showdrink: true
+            }))
+        } else {
+            setLink(prevLink => ({...prevLink,
+                name: "strDrink",
+                link: `filter.php?c=${item}`,
+                showdrink: false
+        }))}
+
+    } 
 
     return (
 
