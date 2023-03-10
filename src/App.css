@@ -30,6 +30,10 @@
   text-decoration: none;
 }
 
-.homescreen {
-  
+.link--container {
+  width: 150px;
+}
+
+.dropdown--menu {
+  background-color: white;
 }

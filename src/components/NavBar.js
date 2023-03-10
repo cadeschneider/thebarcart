@@ -2,7 +2,7 @@ import React, {useState, useRef} from "react";
 import "../App.css"
 import { NavLink } from "react-router-dom";
 import Menu from "./Menu";
-import { HoverMenu } from "./HoverMenu";
+import { HoverMenu } from "../hooks/HoverMenu";
 
 export function NavBar() {
 
@@ -19,14 +19,18 @@ export function NavBar() {
     return(
         <nav className="navbar">
             <div className="navbar--links">
-                <NavLink to="/" className="navbar--text">Home</NavLink>
-                <div className="navbar--menu">
-                    <NavLink to="/" className="navbar--text" ref={dropdownRef} onMouseOver={() => setMenuDropDownOpen(true)}>
-                        Find Drinks
-                        {isMenuDropDownOpen && <Menu />}
-                    </NavLink>
+                <div className="link--container">
+                    <NavLink to="/" className="navbar--text">Home</NavLink>
                 </div>
-                <NavLink to="/cart" className="navbar--text">Cart</NavLink>
+                <div className="link--container" ref={dropdownRef}>
+                    <NavLink to="/finddrinks" className="navbar--text" onMouseOver={() => setMenuDropDownOpen(true)}>
+                        Find Drinks
+                    </NavLink>
+                    {isMenuDropDownOpen && <Menu />}
+                </div>
+                <div className="link--container">
+                    <NavLink to="/cart" className="navbar--text">Cart</NavLink>
+                </div>
             </div>
         </nav>
 

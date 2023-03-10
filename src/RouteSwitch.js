@@ -13,7 +13,9 @@ const RouteSwitch = () => {
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<Home />}/>
-                    <Route path="/finddrink" element={<FindDrink />} />
+                    <Route path="/finddrink" element={<FindDrink />}> 
+                        <Route path=":drinkCategory" element={<FindDrink />}></Route>
+                    </Route>
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
             </BrowserRouter>

@@ -1,43 +1,30 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Item from '../components/Item'
 
-function Categories() {
+function FindDrink() {
+
+    let { drinkCategory } = useParams();
 
     const [list, setList] = useState([]);
-    const [link, setLink] = useState({name: "strCategory", link: "list.php?c=list", showdrink: false})
-
-    console.log(list)
 
     useEffect(() => {
 
-        console.log("https://www.thecocktaildb.com/api/json/v1/1/" + link.link)
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/" + link.link)
+        console.log("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory)
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory)
         .then(response => response.json())
         .then(data => setList(data.drinks));
 
-    },[link])
+    },[drinkCategory])
 
     const datalist = list.map(item => {
 
-        return <Item item={item[link.name]} handleClick={() => {handleClick(item[link.name])}} />
+        return <Item item={item['strDrink']} handleClick={() => {handleClick(item['strDrink'])}} />
     })
-
-    console.log(datalist.length)
 
     function handleClick(item) {
         
-        if (link.showdrink === false) {
-            setLink(prevLink => ({...prevLink,
-                name: "strDrink",
-                link: `filter.php?c=${item}`,
-                showdrink: true
-            }))
-        } else {
-            setLink(prevLink => ({...prevLink,
-                name: "strDrink",
-                link: `filter.php?c=${item}`,
-                showdrink: false
-        }))}
+        console.log(item)
 
     } 
 
@@ -50,4 +37,4 @@ function Categories() {
     )
 }
 
-export default Categories
+export default FindDrink
