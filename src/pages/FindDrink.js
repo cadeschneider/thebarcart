@@ -10,8 +10,9 @@ function FindDrink() {
 
     useEffect(() => {
 
-        console.log("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory)
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory)
+        console.log(drinkCategory)
+        console.log(((drinkCategory !== undefined) ? ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory) : ("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")))
+        fetch(((drinkCategory !== undefined) ? ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory) : ("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")))
         .then(response => response.json())
         .then(data => setList(data.drinks));
 
@@ -19,7 +20,7 @@ function FindDrink() {
 
     const datalist = list.map(item => {
 
-        return <Item item={item['strDrink']} handleClick={() => {handleClick(item['strDrink'])}} />
+        return <Item item={item[((drinkCategory !== undefined) ? ("strDrink") : ("strCategory"))]} handleClick={() => {handleClick(item['strDrink'])}} />
     })
 
     function handleClick(item) {

@@ -4,7 +4,7 @@ function Item(props) {
 
     return(
 
-        <div onClick={props.handleClick}>{props.item}</div>
+        <div className="drinks" onClick={props.handleClick}>{props.item}</div>
 
     )
 }

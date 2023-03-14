@@ -1,12 +1,19 @@
+@font-face {
+  font-family: 'Montserrat';
+    src: local('Montserrat'), url(./fonts/Montserrat.otf) format('opentype');
+}
+
 * {
   box-sizing: border-box;
+  font: ;
 }
 
 body {
   margin: 0px;
   font-family: 'Inter';
   font-style: normal;
-  text-align: right;
+  text-align: center;
+  font-family: "Montserrat";
 }
 
 .navbar {
@@ -22,7 +29,6 @@ body {
 
 .navbar--links {
 
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 600;
   line-height: 22px;
@@ -41,7 +47,6 @@ body {
 
 .link--container {
   width: 150px;
-  background-color: blue;
   position: relative;
   display: inline-block;
 }
@@ -54,4 +59,9 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;
   z-index: 1;
+}
+
+.drinks {
+  
+
 }
