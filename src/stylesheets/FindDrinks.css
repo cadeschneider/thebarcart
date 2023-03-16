@@ -2,6 +2,7 @@
 
 display: flex;
 margin: 10px;
+margin-top: 50px;
 flex-wrap: wrap;
 justify-content: center;
   
@@ -17,6 +18,10 @@ aspect-ratio: 1;
 .drink--image {
     width: 300px;
     border-radius: 10px;
+}
+
+.drink--image:hover {
+    filter: brightness(60%);
 }
 
 .drink--name {
