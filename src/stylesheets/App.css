@@ -1,10 +1,6 @@
 @font-face {
   font-family: 'Montserrat';
-    src: local('Montserrat'), url(./fonts/Montserrat.otf) format('opentype');
-}
-
-* {
-  box-sizing: border-box;
+    src: local('Montserrat'), url(../fonts/Montserrat.otf) format('opentype');
 }
 
 body {
@@ -65,21 +61,4 @@ body {
 .drinks {
   
 
-}
-
-.homescreen {
-  height: 100%;
-}
-
-.background {
-  /* The image used */
-  background-image: url("https://images.unsplash.com/photo-1555901113-a5a735a05ef4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=811&q=80");
-
-  /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }

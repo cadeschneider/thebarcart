@@ -1,10 +1,8 @@
-import '../App.css';
+import '../stylesheets/Home.css';
 
 function App() {
   return (
-    <div className='homescreen'>
       <div className='background'></div>
-    </div>
     
     
   );

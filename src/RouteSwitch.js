@@ -4,11 +4,11 @@ import Home from "./pages/Home"
 import { NavBar } from "./components/NavBar"
 import FindDrink from "./pages/FindDrink";
 import Cart from './pages/Cart'
+import './stylesheets/App.css';
 
 const RouteSwitch = () => {
 
     return(
-        <div>
             <BrowserRouter>
                 <NavBar />
                 <Routes>
@@ -19,7 +19,6 @@ const RouteSwitch = () => {
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
             </BrowserRouter>
-        </div>
     );
 };
 

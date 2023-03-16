@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Item from '../components/Item'
+import '../stylesheets/FindDrinks.css';
 
 function FindDrink() {
 
     let { drinkCategory } = useParams();
 
-    const [list, setList] = useState([]);
+    const [drinks, setDrinks] = useState([]);
 
     useEffect(() => {
-
-        console.log(drinkCategory)
-        console.log(((drinkCategory !== undefined) ? ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory) : ("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")))
-        fetch(((drinkCategory !== undefined) ? ("https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=" + drinkCategory) : ("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")))
+        const cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/"
+        console.log((cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCategory) : ("list.php?c=list"))))
+        fetch(cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCategory) : ("list.php?c=list")))
         .then(response => response.json())
-        .then(data => setList(data.drinks));
+        .then(data => setDrinks(data.drinks));
 
     },[drinkCategory])
 
-    const datalist = list.map(item => {
+    let datalist;
 
-        return <Item item={item[((drinkCategory !== undefined) ? ("strDrink") : ("strCategory"))]} handleClick={() => {handleClick(item['strDrink'])}} />
-    })
+    if (drinkCategory !== undefined) {
+
+            datalist = drinks.map(item => {
+
+            return <Item item={item["strDrink"]} image={item["strDrinkThumb"]} handleClick={() => {handleClick(item['strDrink'])}} />
+        })
+
+    } else {
+             datalist = drinks.map(item => {
+
+            return <Item item={item["strCategory"]} handleClick={() => {handleClick(item['strDrink'])}} />
+        })
+    }
 
     function handleClick(item) {
         
@@ -29,10 +40,29 @@ function FindDrink() {
 
     } 
 
+    function shuffle(array) {
+
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+
     return (
 
-        <div>
-            {datalist}
+        <div className="drinklist">
+            {shuffle(datalist)}
         </div>
 
     )

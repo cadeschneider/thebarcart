@@ -1,5 +1,4 @@
 import React, {useState, useRef} from "react";
-import "../App.css"
 import { NavLink } from "react-router-dom";
 import Menu from "./Menu";
 import { HoverMenu } from "../hooks/HoverMenu";
