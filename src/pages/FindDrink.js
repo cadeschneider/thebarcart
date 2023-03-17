@@ -10,7 +10,10 @@ function FindDrink() {
     const [drinks, setDrinks] = useState([]);
 
     useEffect(() => {
-        const cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/"
+        
+        const cocktailAPI = "https://www.thecocktaildb.com/api/json/v1/1/";
+        const alternateCat = drinkCategory.replace(/\//, "c/c");
+
         console.log((cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCategory) : ("list.php?c=list"))))
         fetch(cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCategory) : ("list.php?c=list")))
         .then(response => response.json())

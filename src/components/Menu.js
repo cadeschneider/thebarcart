@@ -15,12 +15,12 @@ function Menu() {
 
     const datalist = list.map(item => {
 
-        return <NavLink to={`/finddrink/${item.strCategory}`} className="navbar--text">{item.strCategory}</NavLink>
+        return <NavLink to={`/finddrink/${item.strCategory}`} className="dropdown--text">{item.strCategory}</NavLink>
     })
 
     return(
 
-            <div className="dropdown-menu">
+            <div className="dropdown--menu">
                 {datalist}
             </div>
     )

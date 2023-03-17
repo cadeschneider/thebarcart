@@ -21,11 +21,11 @@ export function NavBar() {
                 <div className="link--container">
                     <NavLink to="/" className="navbar--text">Home</NavLink>
                 </div>
-                <div className="link--container" ref={dropdownRef}>
-                    <NavLink to="/finddrink" className="navbar--text" onMouseOver={() => setMenuDropDownOpen(true)}>
+                <div className="link--container" ref={dropdownRef} onMouseOver={() => setMenuDropDownOpen(true)}>
+                    <NavLink to="/finddrink" className="navbar--text">
                         Find Drinks
                     </NavLink>
-                    {isMenuDropDownOpen && <Menu />}
+                    {isMenuDropDownOpen && <Menu onMouseOver={() => setMenuDropDownOpen(true)}/>}
                 </div>
                 <div className="link--container">
                     <NavLink to="/cart" className="navbar--text">Cart</NavLink>
