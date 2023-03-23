@@ -1,6 +1,6 @@
 import '../stylesheets/Home.css';
 
-//expand
+//
 
 function App() {
   return (
