@@ -15,7 +15,9 @@ function Menu() {
 
     const datalist = list.map(item => {
 
+        console.log(item.strCategory)
         return <NavLink to={`/finddrink/${item.strCategory}`} className="dropdown--text">{item.strCategory}</NavLink>
+
     })
 
     return(
