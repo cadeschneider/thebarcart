@@ -1,9 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home"
 import { NavBar } from "./components/NavBar"
+import Footer from "./components/Footer"
 import FindDrink from "./pages/FindDrink";
 import Cart from './pages/Cart'
+import Home from "./pages/Home";
 import './stylesheets/App.css';
 
 const RouteSwitch = () => {
@@ -18,6 +19,7 @@ const RouteSwitch = () => {
                     </Route>
                     <Route path="/cart" element={<Cart />} />
                 </Routes>
+                <Footer />
             </BrowserRouter>
     );
 };

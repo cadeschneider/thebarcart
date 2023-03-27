@@ -1,37 +1,20 @@
 import React, {useState, useRef} from "react";
 import { NavLink } from "react-router-dom";
-import Menu from "./Menu";
-import { HoverMenu } from "../hooks/HoverMenu";
+import ServicesDropdown from '../components/ServicesDropdown';
 
 export function NavBar() {
 
-    const dropdownRef = useRef(null); // Create a reference for dropdown container
-    const [isMenuDropDownOpen, setMenuDropDownOpen] = useState(false);
-
-    // Function to close dropdown
-    const closeHoverMenu = () => {
-    setMenuDropDownOpen(false);
-    };
-
-    HoverMenu(dropdownRef, closeHoverMenu); // Call the hook
 
     return(
-        <nav className="navbar">
-            <div className="navbar--links">
-                <div className="link--container">
-                    <NavLink to="/" className="navbar--text">Home</NavLink>
-                </div>
-                <div className="link--container" ref={dropdownRef} onMouseOver={() => setMenuDropDownOpen(true)}>
-                    <NavLink to="/finddrink" className="navbar--text">
-                        Find Drinks
-                    </NavLink>
-                    {isMenuDropDownOpen && <Menu onMouseOver={() => setMenuDropDownOpen(true)}/>}
-                </div>
-                <div className="link--container">
-                    <NavLink to="/cart" className="navbar--text">Cart</NavLink>
-                </div>
-            </div>
+        <header className="header">
+        <nav>
+            <ul>
+            <li><NavLink to="/" >Home</NavLink></li>
+            <ServicesDropdown />
+            <li><NavLink to="/cart">Cart</NavLink></li>
+            </ul>
         </nav>
+    </header>
 
     );
 }
