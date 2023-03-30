@@ -23,10 +23,12 @@ function ServicesDropdown() {
 
     },[])
 
-    const datalist = list.map(item => {
 
-        console.log(item.strCategory)
-        return <li><NavLink to={`/finddrink/${item.strCategory}`} className="dropdown--text">{item.strCategory}</NavLink></li>
+    const datalist = list.map(item => {
+      const item.strCategory = "Other \/ Unknown"
+      const drinkCat = item.strCategory.replace("/", "\\/")
+        console.log(drinkCat + " " + item.strCategory)
+      const navlinkd = <li><NavLink to={`/finddrink/${drinkCat}`} className="dropdown--text">{item.strCategory}</NavLink></li>
 
     })
 

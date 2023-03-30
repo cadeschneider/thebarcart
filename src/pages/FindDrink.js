@@ -17,7 +17,7 @@ function FindDrink() {
 
         const drinkCat = drinkCategory.replace("/", "/\\")
 
-        console.log((cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCat) : ("list.php?c=list"))))
+       console.log((cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCat) : ("list.php?c=list"))))
         fetch(cocktailAPI + ((drinkCategory !== undefined) ? ("filter.php?c=" + drinkCat) : ("list.php?c=list")))
         .then(response => response.json())
         .then(data => setDrinks(data.drinks));
