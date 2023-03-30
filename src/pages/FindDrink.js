@@ -5,6 +5,8 @@ import '../stylesheets/FindDrinks.css';
 
 function FindDrink() {
 
+    //Introduce redux
+
     let { drinkCategory } = useParams();
 
     const [drinks, setDrinks] = useState([]);
