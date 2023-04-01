@@ -4,7 +4,6 @@ import ServicesDropdown from '../components/ServicesDropdown';
 
 export function NavBar() {
 
-
     return(
         <header className="header">
         <nav>
