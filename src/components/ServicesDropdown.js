@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 //This code creates a ServicesDropdown component that uses React's useState hook to manage the state of whether the dropdown menu is open or closed. It also includes an event handler to toggle the state when the user hovers over the "Services" link.
 //The component returns a list item with a link to "Services", and if the dropdown menu is open, it includes an unordered list with links to "Build", "Create", and "Analyze".
-//You can use this component in your header section by importing it and including it in your navigation list:
+//You can use this component in your header section by importing it and including it in your navigation list
 
 function ServicesDropdown() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
