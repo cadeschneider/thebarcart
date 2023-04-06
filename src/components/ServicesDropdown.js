@@ -15,6 +15,7 @@ function ServicesDropdown() {
 
     const [list, setList] = useState([])
 
+        // Access API
     useEffect(() => {
 
         fetch("https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list")
